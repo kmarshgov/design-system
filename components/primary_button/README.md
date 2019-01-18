@@ -46,9 +46,9 @@ Primary buttons allow users to carry out an important action on your service, su
 </div>
 
 
-## Live Preivew Approach 2 - iframe
+## Live Preview Approach 2 - iframe
 
-<iframe title="Primary Button Preview" frameBorder="0" src="sample.html"></iframe>
+<iframe title="Primary Button Preview" frameBorder="0" src="https://raw.githubusercontent.com/bcgov/design-system/master/components/primary_button/sample.html"></iframe>
 
 ## Requirements
 * This component must be used according the the standard outined in this document. Any feedback should be directed to the feedback forum.
