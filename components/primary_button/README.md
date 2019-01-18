@@ -74,6 +74,28 @@ The library is constantly updated and currently available in the following tools
 ## Code
 ### HTML
 
+<style>
+.primarybutton {
+    background-color: #003366; /* Green */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Noto Sans','Calibri', 'Arial', 'Sans Serif';
+    cursor: pointer;
+}
+
+.primarybutton:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+</style>
+
+
 <div>
     <table>
         <tr>
