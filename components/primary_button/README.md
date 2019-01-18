@@ -73,20 +73,14 @@ The library is constantly updated and currently available in the following tools
 
 ## Code
 ### HTML
-```HTML
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="./style.css">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
-    <title>Primary Button</title>
-  </head>
-  <body>
-    <button class="primarybutton" type="button" name="button">Submit</button>
-  </body>
-</html>
-```
+
+<div>
+    <table>
+        <tr>
+            <td>Foo</td><td><button class="primarybutton" type="button" name="button">Submit</button></td>
+        </tr>
+    </table>
+</div>
 
 ### CSS
 ```HTML
