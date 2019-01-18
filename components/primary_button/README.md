@@ -39,11 +39,16 @@ Primary buttons allow users to carry out an important action on your service, su
   Primary Button Visual:
 ![primary_button](https://github.com/bcgov/design-system/blob/master/components/primary_button/images/primary_button.png?raw=true)
 
-## Live Preview
+## Live Preview Approach 1 - Embedded HTML
 
 <div class="preview">
     <button class="primarybutton" type="button" name="button">Submit</button>
 </div>
+
+
+## Live Preivew Approach 2 - iframe
+
+<iframe title="Primary Button Preview" frameBorder="0" src="sample.html"></iframe>
 
 ## Requirements
 * This component must be used according the the standard outined in this document. Any feedback should be directed to the feedback forum.
