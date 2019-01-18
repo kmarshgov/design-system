@@ -5,6 +5,27 @@ status: Draft
 author: orinevares
 ---
 
+<style>
+    .preview .primarybutton {
+        background-color: #003366; /* Green */
+        border: none;
+        border-radius: 5px;
+        color: white;
+        padding: 10px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        font-family: 'Noto Sans','Calibri', 'Arial', 'Sans Serif';
+        cursor: pointer;
+    }
+
+    .preview .primarybutton:hover {
+        text-decoration: underline;
+        opacity: 0.9;
+    }
+</style>
+
 ![Status](https://img.shields.io/badge/Component-Draft-orange.svg)
 
 # Primary Button
@@ -17,6 +38,12 @@ Primary buttons allow users to carry out an important action on your service, su
 ## Visual
   Primary Button Visual:
 ![primary_button](https://github.com/bcgov/design-system/blob/master/components/primary_button/images/primary_button.png?raw=true)
+
+## Live Preview
+
+<div class="preview">
+    <button class="primarybutton" type="button" name="button">Submit</button>
+</div>
 
 ## Requirements
 * This component must be used according the the standard outined in this document. Any feedback should be directed to the feedback forum.
@@ -73,36 +100,20 @@ The library is constantly updated and currently available in the following tools
 
 ## Code
 ### HTML
-
-<style>
-.primarybutton {
-    background-color: #003366; /* Green */
-    border: none;
-    border-radius: 5px;
-    color: white;
-    padding: 10px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    font-family: 'Noto Sans','Calibri', 'Arial', 'Sans Serif';
-    cursor: pointer;
-}
-
-.primarybutton:hover {
-  text-decoration: underline;
-  opacity: 0.9;
-}
-</style>
-
-
-<div>
-    <table>
-        <tr>
-            <td>Foo</td><td><button class="primarybutton" type="button" name="button">Submit</button></td>
-        </tr>
-    </table>
-</div>
+```HTML
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <title>Primary Button</title>
+  </head>
+  <body>
+    <button class="primarybutton" type="button" name="button">Submit</button>
+  </body>
+</html>
+```
 
 ### CSS
 ```HTML
