@@ -5,6 +5,21 @@ status: Draft
 author: orinevares
 ---
 
+![Status](https://img.shields.io/badge/Component-Draft-orange.svg)
+
+# Primary Button
+Primary buttons allow users to carry out an important action on your service, such as Download or Submit.
+
+## Required
+
+## Last Updated:
+
+## Visual
+  Primary Button Visual:
+![primary_button](https://github.com/bcgov/design-system/blob/master/components/primary_button/images/primary_button.png?raw=true)
+
+## Live Preview Approach 1 - inline HTML
+
 <style>
     .preview .primarybutton {
         background-color: #003366; /* Green */
@@ -26,27 +41,12 @@ author: orinevares
     }
 </style>
 
-![Status](https://img.shields.io/badge/Component-Draft-orange.svg)
-
-# Primary Button
-Primary buttons allow users to carry out an important action on your service, such as Download or Submit.
-
-## Required
-
-## Last Updated:
-
-## Visual
-  Primary Button Visual:
-![primary_button](https://github.com/bcgov/design-system/blob/master/components/primary_button/images/primary_button.png?raw=true)
-
-## Live Preview Approach 1 - Embedded HTML
-
 <div class="preview">
     <button class="primarybutton" type="button" name="button">Submit</button>
 </div>
 
 
-## Live Preview Approach 2 - iframe
+## Live Preview Approach 2 - iframe with content as base64 data URI
 
 <iframe title="Primary Button Preview" frameBorder="0" src="data:text/html;base64,PCFET0NUWVBFIGh0bWw+DQo8aHRtbCBsYW5nPSJlbiIgZGlyPSJsdHIiPg0KPGhlYWQ+DQogICAgPG1ldGEgY2hhcnNldD0idXRmLTgiPg0KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iLi9zdHlsZS5jc3MiPg0KICAgIDxsaW5rIGhyZWY9Imh0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzP2ZhbWlseT1Ob3RvK1NhbnMiIHJlbD0ic3R5bGVzaGVldCI+DQogICAgPHRpdGxlPlNhbXBsZSBQcmltYXJ5IEJ1dHRvbjwvdGl0bGU+DQogICAgPHN0eWxlPg0KICAgICAgICAucHJldmlldyAucHJpbWFyeWJ1dHRvbiB7DQogICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAzMzY2OyAvKiBHcmVlbiAqLw0KICAgICAgICAgICAgYm9yZGVyOiBub25lOw0KICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogNXB4Ow0KICAgICAgICAgICAgY29sb3I6IHdoaXRlOw0KICAgICAgICAgICAgcGFkZGluZzogMTBweCAzMnB4Ow0KICAgICAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyOw0KICAgICAgICAgICAgdGV4dC1kZWNvcmF0aW9uOiBub25lOw0KICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrOw0KICAgICAgICAgICAgZm9udC1zaXplOiAxNnB4Ow0KICAgICAgICAgICAgZm9udC1mYW1pbHk6ICdOb3RvIFNhbnMnLCAnQ2FsaWJyaScsICdBcmlhbCcsICdTYW5zIFNlcmlmJzsNCiAgICAgICAgICAgIGN1cnNvcjogcG9pbnRlcjsNCiAgICAgICAgfQ0KDQogICAgICAgIC5wcmV2aWV3IC5wcmltYXJ5YnV0dG9uOmhvdmVyIHsNCiAgICAgICAgICAgIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lOw0KICAgICAgICAgICAgb3BhY2l0eTogMC45Ow0KICAgICAgICB9DQogICAgPC9zdHlsZT4NCg0KPC9oZWFkPg0KPGJvZHk+DQo8ZGl2IGNsYXNzPSJwcmV2aWV3Ij4NCiAgICA8YnV0dG9uIGNsYXNzPSJwcmltYXJ5YnV0dG9uIiB0eXBlPSJidXR0b24iIG5hbWU9ImJ1dHRvbiI+U3VibWl0PC9idXR0b24+DQo8L2Rpdj4NCjwvYm9keT4NCjwvaHRtbD4NCg=="></iframe>
 

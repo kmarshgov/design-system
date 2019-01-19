@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
     <title>Sample Primary Button</title>
-  </head>
-  <body>
+    <style>
+        .preview .primarybutton {
+            background-color: #003366; /* Green */
+            border: none;
+            border-radius: 5px;
+            color: white;
+            padding: 10px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            font-family: 'Noto Sans', 'Calibri', 'Arial', 'Sans Serif';
+            cursor: pointer;
+        }
+
+        .preview .primarybutton:hover {
+            text-decoration: underline;
+            opacity: 0.9;
+        }
+    </style>
+
+</head>
+<body>
+<div class="preview">
     <button class="primarybutton" type="button" name="button">Submit</button>
-  </body>
+</div>
+</body>
 </html>
