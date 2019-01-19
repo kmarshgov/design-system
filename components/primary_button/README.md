@@ -48,7 +48,7 @@ Primary buttons allow users to carry out an important action on your service, su
 
 ## Live Preview Approach 2 - iframe
 
-<iframe title="Primary Button Preview" frameBorder="0" src="https://raw.githubusercontent.com/bcgov/design-system/master/components/primary_button/sample.html"></iframe>
+<iframe title="Primary Button Preview" frameBorder="0" src="data:text/html,<!DOCTYPE html><html lang=\"en\" dir=\"ltr\"><head>    <meta charset=\"utf-8\">    <link rel=\"stylesheet\" href=\"./style.css\">    <link href=\"https://fonts.googleapis.com/css?family=Noto+Sans\" rel=\"stylesheet\">    <title>Sample Primary Button</title>    <style>        .preview .primarybutton {            background-color: #003366; /* Green */            border: none;            border-radius: 5px;            color: white;            padding: 10px 32px;            text-align: center;            text-decoration: none;            display: inline-block;            font-size: 16px;            font-family: 'Noto Sans', 'Calibri', 'Arial', 'Sans Serif';            cursor: pointer;        }        .preview .primarybutton:hover {            text-decoration: underline;            opacity: 0.9;        }    </style></head><body><div class=\"preview\">    <button class=\"primarybutton\" type=\"button\" name=\"button\">Submit</button></div></body></html>"></iframe>
 
 ## Requirements
 * This component must be used according the the standard outined in this document. Any feedback should be directed to the feedback forum.
