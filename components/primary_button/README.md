@@ -62,6 +62,12 @@ Primary buttons allow users to carry out an important action on your service, su
     </Link>
   </div>    
   </Card>
+  
+## Live Preview Approach 4 - Force Copy sample file and use as iframe src
+  
+[Link to sample](https://raw.githubusercontent.com/bcgov/design-system/master/components/primary_button/sample.html)
+
+<iframe title="Primary Button Preview" frameBorder="0" src="public/sample.html"></iframe>
 
 ## Requirements
 * This component must be used according the the standard outined in this document. Any feedback should be directed to the feedback forum.
