@@ -65,7 +65,9 @@ Primary buttons allow users to carry out an important action on your service, su
   
 ## Live Preview Approach 4 - Force Copy sample file and use as iframe src
   
-[Link to sample](https://raw.githubusercontent.com/bcgov/design-system/master/components/primary_button/sample.html)
+The link below should link cause the page to ce copied to the public folder on the gatsby side.
+ 
+[Link to sample](https://raw.githubusercontent.com/bcgov/design-system/master/components/primary_button/sample.html/)
 
 <iframe title="Primary Button Preview" frameBorder="0" src="public/sample.html"></iframe>
 
