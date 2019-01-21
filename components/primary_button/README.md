@@ -52,7 +52,16 @@ Primary buttons allow users to carry out an important action on your service, su
 
 ## Live Preview Approach 3 - React Component
 
-<Card></Card>
+ <Card resourceType='Documentation' title='Code' author='sheaphillips'>
+    <div>      
+        <p>Some description</p>
+  </div>
+  <div>
+    <Link to="https://github.com>
+      <Image src="https://octodex.github.com/images/Sentrytocat_octodex.jpg"/>
+    </Link>
+  </div>    
+  </Card>
 
 ## Requirements
 * This component must be used according the the standard outined in this document. Any feedback should be directed to the feedback forum.
