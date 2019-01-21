@@ -52,16 +52,7 @@ Primary buttons allow users to carry out an important action on your service, su
 
 ## Live Preview Approach 3 - React Component
 
- <Card resourceType='Documentation' title='Code' author='sheaphillips'>
-    <div>      
-        <p>Some description</p>
-  </div>
-  <div>
-    <Link to="https://github.com>
-      <Image src="https://octodex.github.com/images/Sentrytocat_octodex.jpg"/>
-    </Link>
-  </div>    
-  </Card>
+Blah blah blah
   
 ## Live Preview Approach 4 - Force Copy sample file and use as iframe src
   
