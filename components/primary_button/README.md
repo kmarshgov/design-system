@@ -64,8 +64,7 @@ There are a couple variants of this:
 
 Rather than inline html, or an iframe, this approach would have Design System creators embed a React component into the Mardown source, which would display the sample code and component usage.  This would require developing a  React component - or at least configuring one, but a hypotehical exmaple is provided below:
 
-
- <interactive-counter></interactive-counter> 
+ <component-preview></component-preview> 
 
 
 ## Requirements
