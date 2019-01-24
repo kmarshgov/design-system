@@ -95,7 +95,7 @@ Rather than inline html, or an iframe, this approach would have Design System cr
  
  </head>
  <body>
- <div class="preview">
+ <div class="preview" htmlsrc="sample.html" >
      <button class="primarybutton" type="button" name="button">Submit</button>
  </div>
  </body>
