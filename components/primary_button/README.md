@@ -64,44 +64,7 @@ There are a couple variants of this:
 
 Rather than inline html, or an iframe, this approach would have Design System creators embed a React component into the Mardown source, which would display the sample code and component usage.  This would require developing a  React component - or at least configuring one, but a hypotehical exmaple is provided below:
 
- <component-preview>
- <!DOCTYPE html>
- <html lang="en" dir="ltr">
- <head>
-     <meta charset="utf-8">
-     <link rel="stylesheet" href="./style.css">
-     <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
-     <title>Sample Primary Button</title>
-     <style>
-         .preview .primarybutton {
-             background-color: #003366; /* Green */
-             border: none;
-             border-radius: 5px;
-             color: white;
-             padding: 10px 32px;
-             text-align: center;
-             text-decoration: none;
-             display: inline-block;
-             font-size: 16px;
-             font-family: 'Noto Sans', 'Calibri', 'Arial', 'Sans Serif';
-             cursor: pointer;
-         }
- 
-         .preview .primarybutton:hover {
-             text-decoration: underline;
-             opacity: 0.9;
-         }
-     </style>
- 
- </head>
- <body>
- <div class="preview" htmlsrc="sample.html" >
-     <button class="primarybutton" type="button" name="button">Submit</button>
- </div>
- </body>
- </html>
- </component-preview> 
-
+ <component-preview owner="bcgov" repo="design-system" path="components/primary_button/sample.html" ref="feature/57-interactive-code-examples"> </component-preview>
 
 ## Requirements
 * This component must be used according the the standard outined in this document. Any feedback should be directed to the feedback forum.
