@@ -16,7 +16,7 @@ Primary buttons allow users to carry out an important action on your service, su
 
 ## Visual
   
-<component-preview path="components/primary_button/sample.html" height="500px"> </component-preview>
+<component-preview path="components/primary_button/sample.html" height="70px"> </component-preview>
 
 ## Requirements
 * This component must be used according the the standard outined in this document. Any feedback should be directed to the feedback forum.
