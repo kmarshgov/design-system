@@ -38,6 +38,8 @@ Text inputs allow users to enter a single line of text.
 ## Accessibility
 In addition to [fundamental accessibility]() requirements, this component meets or exceeds the [WCAG 2.0 AA](https://www.w3.org/TR/WCAG20/) standards by incorporating the following criteria.
 
+TESTING
+
 ### Screenreaders
 As read using ChromeVox
 
