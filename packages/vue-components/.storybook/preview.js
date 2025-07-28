@@ -1,11 +1,10 @@
-import type { Preview } from "@storybook/react";
 import bcdsTheme from "./bcdsTheme";
 
 import "@bcgov/bc-sans/css/BC_Sans.css";
 
 import "./global.css";
 
-const preview: Preview = {
+const preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
     docs: {

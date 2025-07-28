@@ -18,11 +18,4 @@ module.exports = {
     "vue/multi-word-component-names": "off",
     "vue/no-reserved-component-names": "off",
   },
-  overrides: [
-    {
-      files: ["*.ts", "*.tsx"],
-      parser: "@typescript-eslint/parser",
-      extends: ["plugin:@typescript-eslint/recommended"],
-    },
-  ],
 };

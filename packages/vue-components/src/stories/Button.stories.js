@@ -1,7 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/vue3";
 import { Button } from "../components";
 
-const meta: Meta<typeof Button> = {
+const meta = {
   title: "Components/Button",
   component: Button,
   parameters: {
@@ -37,9 +36,8 @@ const meta: Meta<typeof Button> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Primary = {
   args: {
     variant: "primary",
   },
@@ -52,7 +50,7 @@ export const Primary: Story = {
   }),
 };
 
-export const Secondary: Story = {
+export const Secondary = {
   args: {
     variant: "secondary",
   },
@@ -65,7 +63,7 @@ export const Secondary: Story = {
   }),
 };
 
-export const Small: Story = {
+export const Small = {
   args: {
     size: "small",
   },
@@ -78,7 +76,7 @@ export const Small: Story = {
   }),
 };
 
-export const Danger: Story = {
+export const Danger = {
   args: {
     danger: true,
   },

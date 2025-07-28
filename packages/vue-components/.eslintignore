@@ -1,0 +1,5 @@
+dist/
+vite-dist/
+node_modules/
+.storybook/
+storybook-static/

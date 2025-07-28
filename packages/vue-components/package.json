@@ -4,12 +4,13 @@
   "type": "module",
   "scripts": {
     "rollup": "rm -rf dist && rollup -c --bundleConfigAsCjs",
-    "lint": "eslint . --ext ts,vue --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint . --ext js,vue --report-unused-disable-directives --max-warnings 0",
     "storybook-dev": "storybook dev -p 6006",
     "storybook-build": "storybook build",
     "vite-dev": "vite",
-    "vite-build": "vue-tsc && vite build",
-    "vite-preview": "vite preview"
+    "vite-build": "vite build",
+    "vite-preview": "vite preview",
+    "build": "npm run rollup"
   },
   "main": "dist/cjs/index.cjs",
   "module": "dist/esm/index.js",

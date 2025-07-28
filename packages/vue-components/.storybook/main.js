@@ -1,8 +1,7 @@
-import type { StorybookConfig } from "@storybook/vue3-vite";
 import * as tokens from "@bcgov/design-tokens/cjs";
 
-const config: StorybookConfig = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx|vue)"],
+const config = {
+  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|vue)"],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
@@ -13,7 +12,7 @@ const config: StorybookConfig = {
     name: "@storybook/vue3-vite",
     options: {
       builder: {
-        viteConfigPath: "vite.config.ts",
+        viteConfigPath: "vite.config.js",
       },
     },
   },

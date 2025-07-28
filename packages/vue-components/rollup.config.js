@@ -4,7 +4,6 @@ import postcss from "rollup-plugin-postcss";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import vue from "rollup-plugin-vue";
 
-// eslint-disable-next-line no-undef
 const packageJson = require("./package.json");
 
 export default [
