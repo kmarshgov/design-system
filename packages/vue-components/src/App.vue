@@ -1,9 +1,9 @@
 <template>
   <div>
     <Header title="B.C. Design System Kitchen Sink" />
-    <Header title="Header with custom logo anchor element" />
     <main>
       <h1>Vue Components</h1>
+      
       <section>
         <h2>Button Examples</h2>
         <Button @click="handleClick">Primary Button</Button>
@@ -16,19 +16,68 @@
           <SvgMenuIcon />
         </Button>
       </section>
+
+      <section>
+        <h2>Select Examples</h2>
+        <Select
+          label="Choose an option"
+          :items="selectItems"
+          v-model="selectedValue"
+          @change="handleSelectChange"
+        />
+        <p v-if="selectedValue">Selected: {{ selectedValue }}</p>
+      </section>
+
+      <section>
+        <h2>Tag Examples</h2>
+        <Tag text-value="Blue Tag" color="blue" />
+        <Tag text-value="Green Tag" color="green" />
+        <Tag text-value="Red Tag" color="red" />
+        <Tag text-value="Removable Tag" color="bc-blue" :allows-removing="true" @remove="handleTagRemove" />
+      </section>
+
+      <section>
+        <h2>TagGroup and TagList Examples</h2>
+        <TagGroup label="Categories" description="Select your categories">
+          <TagList
+            :items="tagListItems"
+            orientation="horizontal"
+            @tag-remove="handleTagListRemove"
+          />
+        </TagGroup>
+      </section>
+
+      <section>
+        <h2>Tooltip Examples</h2>
+        <Tooltip content="This is a tooltip" placement="top">
+          <Button variant="secondary">Hover for tooltip</Button>
+        </Tooltip>
+      </section>
     </main>
+
+    <Footer
+      :hide-acknowledgement="false"
+      :hide-logo-and-links="false"
+      :hide-copyright="false"
+    />
   </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
-import { Button, Header } from '@/components'
+import { Button, Header, Footer, Select, Tag, TagGroup, TagList, Tooltip } from '@/components'
 
 export default {
   name: 'App',
   components: {
     Button,
     Header,
+    Footer,
+    Select,
+    Tag,
+    TagGroup,
+    TagList,
+    Tooltip,
     SvgMenuIcon: defineComponent({
       template: `
         <svg
@@ -58,10 +107,35 @@ export default {
       `
     })
   },
+  data() {
+    return {
+      selectedValue: null,
+      selectItems: [
+        { id: 'option1', label: 'Option 1', description: 'First option' },
+        { id: 'option2', label: 'Option 2', description: 'Second option' },
+        { id: 'option3', label: 'Option 3', description: 'Third option' }
+      ],
+      tagListItems: [
+        { id: 'tag1', textValue: 'Tag 1', color: 'blue', allowsRemoving: true },
+        { id: 'tag2', textValue: 'Tag 2', color: 'green', allowsRemoving: true },
+        { id: 'tag3', textValue: 'Tag 3', color: 'red', allowsRemoving: true }
+      ]
+    }
+  },
   methods: {
     handleClick(event) {
       console.log('Button clicked:', event)
       alert('Button clicked!')
+    },
+    handleSelectChange(event) {
+      console.log('Select changed:', event)
+    },
+    handleTagRemove(event) {
+      console.log('Tag removed:', event)
+    },
+    handleTagListRemove(event) {
+      console.log('Tag list item removed:', event)
+      this.tagListItems = this.tagListItems.filter(item => item.id !== event.id)
     }
   }
 }
