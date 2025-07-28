@@ -12,62 +12,101 @@
   </button>
 </template>
 
-<script setup lang="ts">
+<script>
 import { computed, ref } from 'vue'
-import type { ButtonProps } from './types'
 
-const props = withDefaults(defineProps<ButtonProps>(), {
-  size: "medium",
-  variant: "primary",
-  danger: false,
-  isIconButton: false,
-  disabled: false,
-})
+export default {
+  name: 'Button',
+  props: {
+    /**
+     * Defaults to `medium`. `small` is shorter vertically.
+     */
+    size: {
+      type: String,
+      default: "medium",
+      validator: (value) => ["small", "medium"].includes(value)
+    },
+    /**
+     * Defaults to `primary`.
+     */
+    variant: {
+      type: String,
+      default: "primary",
+      validator: (value) => ["primary", "secondary", "tertiary", "link"].includes(value)
+    },
+    /**
+     * For destructive/deletion actions.
+     */
+    danger: {
+      type: Boolean,
+      default: false
+    },
+    /**
+     * If true, renders a square button intended for a single icon.
+     */
+    isIconButton: {
+      type: Boolean,
+      default: false
+    },
+    /**
+     * Whether the button is disabled.
+     */
+    disabled: {
+      type: Boolean,
+      default: false
+    }
+  },
+  emits: ['click', 'focus', 'blur'],
+  setup(props, { emit }) {
+    const isHovered = ref(false)
+    const isFocused = ref(false)
 
-const emit = defineEmits<{
-  click: [event: MouseEvent]
-  focus: [event: FocusEvent]
-  blur: [event: FocusEvent]
-}>()
+    const buttonClasses = computed(() => [
+      'bcds-vue-Button',
+      props.size,
+      props.variant,
+      {
+        'danger': props.danger,
+        'icon': props.isIconButton,
+        'hovered': isHovered.value,
+        'focused': isFocused.value,
+        'disabled': props.disabled,
+      }
+    ])
 
-const isHovered = ref(false)
-const isFocused = ref(false)
+    const handleClick = (event) => {
+      if (!props.disabled) {
+        emit('click', event)
+      }
+    }
 
-const buttonClasses = computed(() => [
-  'bcds-vue-Button',
-  props.size,
-  props.variant,
-  {
-    'danger': props.danger,
-    'icon': props.isIconButton,
-    'hovered': isHovered.value,
-    'focused': isFocused.value,
-    'disabled': props.disabled,
+    const handleFocus = (event) => {
+      isFocused.value = true
+      emit('focus', event)
+    }
+
+    const handleBlur = (event) => {
+      isFocused.value = false
+      emit('blur', event)
+    }
+
+    const handleMouseEnter = () => {
+      isHovered.value = true
+    }
+
+    const handleMouseLeave = () => {
+      isHovered.value = false
+    }
+
+    return {
+      buttonClasses,
+      handleClick,
+      handleFocus,
+      handleBlur,
+      handleMouseEnter,
+      handleMouseLeave
+    }
   }
-])
-
-const handleClick = (event: MouseEvent) => {
-  if (!props.disabled) {
-    emit('click', event)
-  }
-}
-
-const handleFocus = (event: FocusEvent) => {
-  isFocused.value = true
-  emit('focus', event)
-}
-
-const handleBlur = (event: FocusEvent) => {
-  isFocused.value = false
-  emit('blur', event)
-}
-
-const handleMouseEnter = () => {
-  isHovered.value = true
-}
-
-const handleMouseLeave = () => {
-  isHovered.value = false
 }
 </script>
 

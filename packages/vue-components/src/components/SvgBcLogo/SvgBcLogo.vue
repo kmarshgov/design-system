@@ -99,10 +99,17 @@
   </svg>
 </template>
 
-<script setup lang="ts">
-import type { SvgBcLogoProps } from './types'
-
-withDefaults(defineProps<SvgBcLogoProps>(), {
-  id: "bcgov-logo",
-})
+<script>
+export default {
+  name: 'SvgBcLogo',
+  props: {
+    /**
+     * The ID attribute for the SVG element.
+     */
+    id: {
+      type: String,
+      default: "bcgov-logo"
+    }
+  }
+}
 </script>
