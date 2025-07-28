@@ -30,16 +30,22 @@ export default [
       commonjs(),
       vue(),
       typescript({
-        tsconfig: "./tsconfig.json",
-        include: ["src/index.ts", "src/components/**/*"],
+        tsconfig: "./tsconfig.rollup.json",
       }),
       postcss(),
     ],
   },
   {
-    input: "dist/esm/types/index.d.ts",
+    input: "src/components/index.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
-    plugins: [dts()],
+    plugins: [
+      typescript({
+        tsconfig: "./tsconfig.rollup.json",
+        declaration: true,
+        declarationOnly: true,
+      }),
+      dts(),
+    ],
     external: [/\.css$/],
   },
 ];

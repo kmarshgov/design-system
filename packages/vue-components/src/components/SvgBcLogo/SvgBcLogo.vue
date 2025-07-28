@@ -100,12 +100,7 @@
 </template>
 
 <script setup lang="ts">
-export interface SvgBcLogoProps {
-  /**
-   * The ID attribute for the SVG element.
-   */
-  id?: string
-}
+import type { SvgBcLogoProps } from './types'
 
 withDefaults(defineProps<SvgBcLogoProps>(), {
   id: "bcgov-logo",
