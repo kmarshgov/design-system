@@ -61,7 +61,7 @@
                 {{ section.header }}
               </div>
               <div
-                v-for="(item, index) in section.items"
+                v-for="item in section.items"
                 :key="item.id || item.label"
                 :class="`bcds-react-aria-Select--ListBoxItem ${item.isDestructive ? 'destructive' : ''} ${selectedValue === (item.id || item.label) ? 'selected' : ''}`"
                 @click="selectItem(item)"
@@ -90,7 +90,7 @@
           </template>
           <template v-else>
             <div
-              v-for="(item, index) in items"
+              v-for="item in items"
               :key="item.id || item.label"
               :class="`bcds-react-aria-Select--ListBoxItem ${item.isDestructive ? 'destructive' : ''} ${selectedValue === (item.id || item.label) ? 'selected' : ''}`"
               @click="selectItem(item)"

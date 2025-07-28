@@ -5,6 +5,31 @@
       <h1>Vue Components</h1>
       
       <section>
+        <h2>Alert Banner Examples</h2>
+        <AlertBanner variant="error">The email address cannot be empty.</AlertBanner>
+        <AlertBanner variant="warning">
+          The <a href="#">eligibility requirements</a> for this service have changed. Review the changes before continuing.
+        </AlertBanner>
+        <AlertBanner variant="info">The deadline for submission has been extended to March 1, 2020.</AlertBanner>
+        <AlertBanner variant="success">Your application has been successfully submitted.</AlertBanner>
+      </section>
+
+      <section>
+        <h2>Inline Alert Examples</h2>
+        <p>This is normal text with an <InlineAlert variant="error">error alert</InlineAlert> inline.</p>
+        <p>This is normal text with a <InlineAlert variant="warning">warning alert</InlineAlert> inline.</p>
+        <p>This is normal text with an <InlineAlert variant="info">info alert</InlineAlert> inline.</p>
+        <p>This is normal text with a <InlineAlert variant="success">success alert</InlineAlert> inline.</p>
+      </section>
+
+      <section>
+        <h2>Callout Examples</h2>
+        <Callout>
+          <p>By March 1, 2018, eligible residents of B.C. are expected to renew enrolment in the Medical Services Plan (MSP) and get a BC Services Card.</p>
+        </Callout>
+      </section>
+
+      <section>
         <h2>Button Examples</h2>
         <Button @click="handleClick">Primary Button</Button>
         <Button variant="secondary" @click="handleClick">Secondary Button</Button>
@@ -18,6 +43,65 @@
       </section>
 
       <section>
+        <h2>Text Field Examples</h2>
+        <TextField
+          v-model="textFieldValue"
+          label="First Name"
+          placeholder="Enter your first name"
+          helper-text="This field is required"
+        />
+        <TextField
+          v-model="emailValue"
+          type="email"
+          label="Email Address"
+          :error-message="emailError"
+        />
+      </section>
+
+      <section>
+        <h2>Text Area Examples</h2>
+        <TextArea
+          v-model="textAreaValue"
+          label="Can you provide more detail?"
+          :rows="4"
+          :cols="60"
+          placeholder="Enter your detailed response here..."
+        />
+      </section>
+
+      <section>
+        <h2>Checkbox Group Examples</h2>
+        <CheckboxGroup
+          v-model="selectedCheckboxes"
+          legend="Choose your preferences"
+          :options="checkboxOptions"
+          @change="handleCheckboxChange"
+        />
+        <p v-if="selectedCheckboxes.length">Selected: {{ selectedCheckboxes.join(', ') }}</p>
+      </section>
+
+      <section>
+        <h2>Radio Group Examples</h2>
+        <RadioGroup
+          v-model="selectedRadio"
+          legend="Choose one option"
+          :options="radioOptions"
+          @change="handleRadioChange"
+        />
+        <p v-if="selectedRadio">Selected: {{ selectedRadio }}</p>
+      </section>
+
+      <section>
+        <h2>Switch Examples</h2>
+        <Switch
+          v-model="switchValue"
+          label="Enable notifications"
+          @change="handleSwitchChange"
+        />
+        <p>Switch is {{ switchValue ? 'ON' : 'OFF' }}</p>
+      </section>
+
+      <section>
         <h2>Select Examples</h2>
         <Select
           label="Choose an option"
@@ -26,6 +110,32 @@
           @change="handleSelectChange"
         />
         <p v-if="selectedValue">Selected: {{ selectedValue }}</p>
+      </section>
+
+      <section>
+        <h2>Accordion Group Examples</h2>
+        <AccordionGroup
+          :items="accordionItems"
+          :allow-multiple="true"
+          :default-open="[0]"
+          @toggle="handleAccordionToggle"
+        />
+      </section>
+
+      <section>
+        <h2>Dialog Examples</h2>
+        <Button @click="openDialog">Open Dialog</Button>
+        <Dialog
+          :is-open="isDialogOpen"
+          title="Example Dialog"
+          @close="closeDialog"
+        >
+          <p>This is the content of the dialog. You can put any content here.</p>
+          <template #footer>
+            <Button variant="secondary" @click="closeDialog">Cancel</Button>
+            <Button @click="closeDialog">Confirm</Button>
+          </template>
+        </Dialog>
       </section>
 
       <section>
@@ -65,18 +175,47 @@
 
 <script>
 import { defineComponent } from 'vue'
-import { Button, Header, Footer, Select, Tag, TagGroup, TagList, Tooltip } from '@/components'
+import { 
+  AccordionGroup,
+  AlertBanner,
+  Button,
+  Callout,
+  CheckboxGroup,
+  Dialog,
+  Header,
+  Footer,
+  InlineAlert,
+  RadioGroup,
+  Select,
+  Switch,
+  Tag,
+  TagGroup,
+  TagList,
+  TextArea,
+  TextField,
+  Tooltip
+} from '@/components'
 
 export default {
   name: 'App',
   components: {
+    AccordionGroup,
+    AlertBanner,
     Button,
+    Callout,
+    CheckboxGroup,
+    Dialog,
     Header,
     Footer,
+    InlineAlert,
+    RadioGroup,
     Select,
+    Switch,
     Tag,
     TagGroup,
     TagList,
+    TextArea,
+    TextField,
     Tooltip,
     SvgMenuIcon: defineComponent({
       template: `
@@ -110,10 +249,44 @@ export default {
   data() {
     return {
       selectedValue: null,
+      textFieldValue: '',
+      emailValue: '',
+      emailError: null,
+      textAreaValue: '',
+      selectedCheckboxes: [],
+      selectedRadio: null,
+      switchValue: false,
+      isDialogOpen: false,
       selectItems: [
         { id: 'option1', label: 'Option 1', description: 'First option' },
         { id: 'option2', label: 'Option 2', description: 'Second option' },
         { id: 'option3', label: 'Option 3', description: 'Third option' }
+      ],
+      checkboxOptions: [
+        { value: 'option1', label: 'Newsletter subscription', disabled: false },
+        { value: 'option2', label: 'SMS notifications', disabled: false },
+        { value: 'option3', label: 'Email updates', disabled: false },
+        { value: 'option4', label: 'Disabled option', disabled: true }
+      ],
+      radioOptions: [
+        { value: 'small', label: 'Small', disabled: false },
+        { value: 'medium', label: 'Medium', disabled: false },
+        { value: 'large', label: 'Large', disabled: false },
+        { value: 'extra-large', label: 'Extra Large (disabled)', disabled: true }
+      ],
+      accordionItems: [
+        {
+          title: 'Section 1',
+          content: 'This is the content of the first accordion section. It can contain any HTML content.'
+        },
+        {
+          title: 'Section 2',
+          content: 'This is the content of the second accordion section. You can have multiple paragraphs and other elements here.'
+        },
+        {
+          title: 'Section 3',
+          content: 'This is the content of the third accordion section. Each section can be opened and closed independently.'
+        }
       ],
       tagListItems: [
         { id: 'tag1', textValue: 'Tag 1', color: 'blue', allowsRemoving: true },
@@ -129,6 +302,24 @@ export default {
     },
     handleSelectChange(event) {
       console.log('Select changed:', event)
+    },
+    handleCheckboxChange(values) {
+      console.log('Checkbox group changed:', values)
+    },
+    handleRadioChange(value) {
+      console.log('Radio group changed:', value)
+    },
+    handleSwitchChange(value) {
+      console.log('Switch changed:', value)
+    },
+    handleAccordionToggle(event) {
+      console.log('Accordion toggled:', event)
+    },
+    openDialog() {
+      this.isDialogOpen = true
+    },
+    closeDialog() {
+      this.isDialogOpen = false
     },
     handleTagRemove(event) {
       console.log('Tag removed:', event)
